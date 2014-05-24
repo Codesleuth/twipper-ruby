@@ -1,0 +1,29 @@
+doctype html
+html
+  head
+    title Slim Examples
+    meta name="keywords" content="template language"
+    meta name="author" content=author
+    javascript:
+      alert('Slim supports embedded javascript!')
+
+  body
+    h1 Twipper!
+
+    == yield
+
+    #content
+      p Latest twipps...
+
+      - unless twipps.empty?
+        table
+          - for twipp in twipps do
+            tr
+              td.author = twipp.author
+              td.content = twipp.content
+      - else
+        p
+         | No twipps found. Is anyone there?
+
+    div id="footer"
+      | Copyright © #{year} #{author}
