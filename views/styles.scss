@@ -8,3 +8,27 @@
 * {
   font-family: 'FiraSans-Light';
 }
+
+#latest {
+  position: absolute;
+  width: 300px;
+  margin-left: 300px;
+}
+
+#twipp {
+  position: absolute;
+  width: 300px;
+}
+
+#footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  height: 70px;
+  background-color: white;
+  width: 100%;
+}
+
+body {
+  margin-bottom: 120px;
+}

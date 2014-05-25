@@ -1,5 +1,4 @@
 require 'sinatra'
-require 'redcarpet'
 require 'slim'
 require 'sass'
 
@@ -34,11 +33,7 @@ end
 
 get '/fonts/FiraSans-Light.otf' do
   content_type 'font/opentype'
-  send_file File.join('views/fonts', 'FiraSans-Light.otf')
-end
-
-get '/hi' do
-  "Hello World!"
+  send_file File.join('fonts', 'FiraSans-Light.otf')
 end
 
 post '/' do
@@ -47,9 +42,5 @@ post '/' do
 
   $twipps << Twipp.new(@author, @content)
 
-  slim :index, locals: {
-    author: 'this is the author',
-    year: 1234,
-    twipps: $twipps
-  }
+  redirect '/'
 end
