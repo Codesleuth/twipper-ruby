@@ -1,6 +1,7 @@
 require 'sinatra'
 require 'redcarpet'
 require 'slim'
+require 'sass'
 
 $twipps = []
 
@@ -25,6 +26,15 @@ get '/' do
     year: 1234,
     twipps: $twipps
   }
+end
+
+get '/styles.css' do
+  scss :styles
+end
+
+get '/fonts/FiraSans-Light.otf' do
+  content_type 'font/opentype'
+  send_file File.join('views/fonts', 'FiraSans-Light.otf')
 end
 
 get '/hi' do
